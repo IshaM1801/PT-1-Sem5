@@ -46,3 +46,4 @@ A common way of introducing data warehousing is to refer to the characteristics 
    • This contrasts with a transactional system, which typically maintains only current data, making it difficult to retrieve older records.
 
    For Diagrams refer to techknowledge page 1-6
+   .

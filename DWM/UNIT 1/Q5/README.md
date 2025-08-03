@@ -15,3 +15,4 @@ Operational Metadata. As you know, data for the data warehouse comes from severa
 Extraction and Transformation Metadata. Extraction and transformation metada- ta contain data about the extraction of data from the source systems, namely, the extrac- tion frequencies, extraction methods, and business rules for the data extraction. Also, this category of metadata contains information about all the data transformations that take place in the data staging area.
 
 End-User Metadata. The end-user metadata is the navigational map of the data ware- house. It enables the end-users to find information from the data warehouse. The end-user metadata allows the end-users to use their own business terminology and look for infor- mation in those ways in which they normally think of the business.
+.

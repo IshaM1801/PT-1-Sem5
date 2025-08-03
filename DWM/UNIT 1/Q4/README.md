@@ -29,3 +29,4 @@ Disadvantages:
 • Permeates redundant data in every data mart
 • Perpetuates inconsistent and irreconcilable data
 • Proliferates unmanageable interfaces
+.

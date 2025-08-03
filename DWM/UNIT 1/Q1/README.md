@@ -11,3 +11,4 @@ OSS is performance sensitive, which means it must deliver quick response times a
 A good OSS ensures no data redundancy, which maintains consistency and reduces storage costs. The database size in such systems generally ranges between 100 MB to 100 GB, depending on the size and scale of the organization.
 
 In summary, Operational Support Systems are essential for handling the core operational tasks of a business.
+.

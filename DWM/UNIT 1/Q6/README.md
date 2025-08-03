@@ -24,3 +24,4 @@ Metadata in a data warehouse is structured information that describes, explains,
 
 6. Drives Automation and Integration
    Systems use metadata to automate workflows, ETL processes, and API integration, which search engines don’t handle for enterprise systems.
+   .

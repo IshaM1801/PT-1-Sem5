@@ -52,3 +52,4 @@ Stores data about data, such as definitions, mappings, and structures. It is mor
 9. Management and Control Component
 
 This component coordinates and monitors all activities in the warehouse—from ETL to storage and delivery—and interacts closely with metadata to ensure proper functioning and administration.
+.
