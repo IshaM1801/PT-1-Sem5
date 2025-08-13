@@ -75,5 +75,3 @@ For any errors, doubts, or suggestions:
 	•	Or raise an issue in the GitHub repository.
 
 ⸻
-
-Do you want me to also add a GitHub-friendly table of contents with links to each unit so navigation in the README is easier? That would make it more professional and exam-ready.
