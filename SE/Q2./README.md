@@ -1,4 +1,4 @@
-Q2) Explain with a diagram spiral process model in detail & the kind of applications they are most suitable for.
+Q2 Explain with a diagram spiral process model in detail & the kind of applications they are most suitable for.
 
 Ans: Spiral model is a combination of iterative & waterfall model.
 • It provides potential for rapid development of increasingly more complete version of the software.
