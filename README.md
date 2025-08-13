@@ -15,29 +15,6 @@ The primary aim is to provide a clear, well-structured reference for students to
 
 ⸻
 
-📂 Repository Structure
-
-unit-test-solutions/
-│
-├── DWM/
-│   ├── Q1.md
-│   ├── Q2.md
-│   └── ...
-│
-├── IP/
-│   ├── Q1.md
-│   ├── Q2.md
-│   └── ...
-│
-├── SE/
-│   ├── ...
-│
-└── README.md
-
-	•	Subbject folders → Contain question-wise solutions for each subject.
-	•	Solutions are formatted for exam readiness with definitions, diagrams (where needed), and examples.
-
-⸻
 
 ⚙️ Setup Instructions
 	1.	Clone the Repository
