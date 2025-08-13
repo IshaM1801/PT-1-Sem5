@@ -55,6 +55,6 @@ Examples
 \w*(\d\w*[a-zA-Z]|[a-zA-Z]\w*\d)\w*
 
 Summary
-Regular expressions in JavaScript allow developers to define patterns for matching strings. They support features like special characters, escape codes, concatenation, union, character classes, and quantifiers. The RegExp object and test() method make it easy to check if input strings match desired patterns, which is especially useful for form validation, search operations, and text processing in client-side scripting.
+Regular expressions in JavaScript allow developers to define patterns for matching strings. They support features like special characters, escape codes, concatenation, union, character classes, and quantifiers. The RegExp object and test() method make it easy to check if input strings match desired patterns, which is especially useful for form validation, search operations, and text processing in client-side scripting
 
 ⸻
