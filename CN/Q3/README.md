@@ -31,22 +31,38 @@ to Device B.
 • When the end system receives the unstructured bit stream from the physical wire,
 each layer removes the header information applicable to it until the application
 receives the data.
-• Eg: An email is sent from Device A to Device B 1. An application, such as an email program, creates data that will be sent by an end
-user, such as an email message. The Application layer (layer 7) places a header
-(encapsulation) field that contains information such as screen size and fonts,
-and passes the data to the Presentation layer (layer 6).
-How Data Flows through the OSI Layers 2. The Presentation layer places layer 6 header information(PH) and will then pass
-the new data to the Session layer (layer 5). 3. The Session layer follows the same process by adding layer 5 header
-information(SH).
-4.The Transport layer places layer 4 information in the header(TH), and passes it to
-the Network layer (layer 3). 5. The Network layer places layer 3 header information(NH), such as the source and
-destination address so the Network layer can determine the best delivery path for
-the packets, and passes this data to the Data Link layer (layer 2). 6. The Data Link layer places layer 2 header(DH) and trailer information(DT) such as a
-Frame Check Sequence (FCS) to ensure that the information is not corrupt, and passes
-this new data to the Physical layer (layer 1) for transmission across the media. 7. The bit stream is then transmitted as ones and zeros on the Physical layer. 8. Steps 1 through 7 occur in reverse order on the destination device. Device B collects the
-raw bits from the physical wire and passes them up the Data Link layer. The Data Link
-layer removes the headers and trailers and passes the remaining information to the
-Network layer and so forth until data is received by the Application layer. Eventually,
-Device B will receive an email notification displaying a message to indicate that a new
-email message has been received.
------diagram.png(attached in this folder)
+• Eg: An email is sent from Device A to Device B
+
+1. An application, such as an email program, creates data that will be sent by an end
+   user, such as an email message. The Application layer (layer 7) places a header
+   (encapsulation) field that contains information such as screen size and fonts,
+   and passes the data to the Presentation layer (layer 6).
+
+How Data Flows through the OSI Layers
+
+2. The Presentation layer places layer 6 header information(PH) and will then pass
+   the new data to the Session layer (layer 5).
+
+3. The Session layer follows the same process by adding layer 5 header
+   information(SH).
+
+4. The Transport layer places layer 4 information in the header(TH), and passes it to
+   the Network layer (layer 3).
+
+5. The Network layer places layer 3 header information(NH), such as the source and
+   destination address so the Network layer can determine the best delivery path for
+   the packets, and passes this data to the Data Link layer (layer 2).
+
+6. The Data Link layer places layer 2 header(DH) and trailer information(DT) such as a
+   Frame Check Sequence (FCS) to ensure that the information is not corrupt, and passes
+   this new data to the Physical layer (layer 1) for transmission across the media.
+
+7. The bit stream is then transmitted as ones and zeros on the Physical layer.
+
+8. Steps 1 through 7 occur in reverse order on the destination device. Device B collects the
+   raw bits from the physical wire and passes them up the Data Link layer. The Data Link
+   layer removes the headers and trailers and passes the remaining information to the
+   Network layer and so forth until data is received by the Application layer. Eventually,
+   Device B will receive an email notification displaying a message to indicate that a new
+   email message has been received.
+   -----diagram.png(attached in this folder)
