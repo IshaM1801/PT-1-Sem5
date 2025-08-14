@@ -32,10 +32,10 @@ Product Enhancement Project:
 
     •	If risks cannot be resolved project is terminated.
 
-Advantages
+Advantages:
 → more flexible to changing requirements
 → risk management is easier
 
-Disadvantages
+Disadvantages:
 → it is difficult to manage development process
 → spiral can run indefinitely
