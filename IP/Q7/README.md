@@ -47,4 +47,4 @@ CSS provides various properties to style and control the appearance of text and 
 9. background-size – Specifies the size of the background image.
    Values: auto, cover, contain, specific dimensions.
 10. background-repeat – Determines if/how a background image repeats.
-    Values: repeat, repeat-x, repeat-y, no-repeat.
+    Values: repeat, repeat-x, repeat-y, no-repeat
