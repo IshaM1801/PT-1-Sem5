@@ -1,5 +1,3 @@
----
-
 # **Different Steps Involved in Data Preprocessing**
 
 Data preprocessing is a crucial step in the data mining process.

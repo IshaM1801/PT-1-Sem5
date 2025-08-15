@@ -1,5 +1,3 @@
----
-
 # **Handling Missing Values in Real-World Data**
 
 In real-world data, tuples with missing values for some attributes are a common occurrence. Choosing an appropriate method to handle missing data depends on the data mining goal and the domain context.
