@@ -1,101 +1,85 @@
-## **Attribute Selection Measures of Decision Tree Classifier**
+---
 
-## In Decision Tree classification, **attribute selection measures** are used to select the attribute that best splits the data into different classes. Two widely used attribute selection measures are **Gini Index** and **Information Gain**.
+## **Holdout and Random Subsampling Method for Evaluating a Classifier**
 
-### **(1) Gini Index (IBM Intelligent Miner)**
+### **Holdout Method**
 
-- Suppose all attributes are continuous-valued.
-- Assume that each value of attribute has many possible split.
-- It can be adapted for categorical attributes.
-- An alternative method to information gain is called the **gini index**.
-- Gini is used in **CART (Classification and Regression Trees)**, IBM’s Intelligent Miner system, SPRINT (Scalable PaRallelizable INduction of decision Trees).
-- If a dataset **T** contains examples from **n** classes, gini index, gini(T) is defined as:
+* In **holdout method**, the available dataset is **randomly divided** into **two disjoint subsets**:
 
-$$
-\text{gini}(T) = 1 - \sum_{j=1}^n p_j^2
-$$
+  1. **Training data set** – used to train the classifier.
+  2. **Testing (or test) data set** – used to evaluate the performance of the classifier.
 
-Where, $p_j$ is the relative frequency of class $j$ in $T$.
+* A common division is to use **2/3 of the data for training** and **1/3 of the data for testing**.
+  This ensures that there is sufficient data for both model construction and for assessing its performance on unseen data.
 
-- gini(T) is minimized if the classes in T are skewed.
+* **Process**:
 
-After splitting T into two subsets T₁ and T₂ with sizes N₁ and N₂, the gini index of the split data is defined as:
-
-$$
-\text{gini}_{split}(T) = \frac{N_1}{N} \text{gini}(T_1) + \frac{N_2}{N} \text{gini}(T_2)
-$$
+  * The classifier is trained using the training set.
+  * Once the classifier is constructed, the test set is used to estimate the **error rate** of the classifier.
+  * The error rate is calculated as the proportion of misclassified instances in the test data.
 
 ---
 
-**Example using Gini Index:**
+**Advantages**:
 
-Consider the dataset **D**:
-
-| Outlook  | Temperature | Humidity | Windy | Play? |
-| -------- | ----------- | -------- | ----- | ----- |
-| Sunny    | Hot         | High     | False | No    |
-| Sunny    | Hot         | High     | True  | No    |
-| Overcast | Hot         | High     | True  | Yes   |
-| Rainy    | Mild        | High     | False | Yes   |
-| Rainy    | Cool        | Normal   | False | Yes   |
-| Rainy    | Cool        | Normal   | True  | No    |
-| Overcast | Cool        | Normal   | True  | Yes   |
-| Sunny    | Mild        | High     | False | No    |
-| Sunny    | Cool        | Normal   | False | Yes   |
-| Rainy    | Mild        | Normal   | False | Yes   |
-| Sunny    | Mild        | Normal   | True  | Yes   |
-| Overcast | Mild        | High     | True  | Yes   |
-| Overcast | Hot         | Normal   | False | Yes   |
-| Rainy    | Mild        | High     | True  | No    |
-
-**Total for node D:**
-
-$$
-\text{gini}(D) = 1 - \text{sum}(p_1^2, p_2^2, \dots, p_n^2)
-$$
-
-Here $n = 2$ classes (Yes, No).
-For the above dataset:
-
-$$
-\text{gini}(D) = 1 - \left[ \left(\frac{9}{14}\right)^2 + \left(\frac{5}{14}\right)^2 \right] = 0.459
-$$
+- Very **simple** to implement.
+- Computationally **efficient** as the model is trained and tested only once.
 
 ---
 
-### **(2) Information Gain (ID3 / C4.5)**
+**Problems / Disadvantages**:
 
-- All attributes are believed to be categorical.
-- It can be adapted for continuous-valued attributes.
-- The attribute which has the highest **information gain** is selected for split.
-- Assume there are two classes, P and N.
-
-Suppose we have **S** samples, out of these **p** samples belong to class P and **n** samples belong to class N. The amount of information needed to decide if a random example in S belongs to P or N is:
-
-$$
-I(p, n) = -\frac{p}{p+n} \log_2 \frac{p}{p+n} - \frac{n}{p+n} \log_2 \frac{n}{p+n}
-$$
-
-If attribute A partitions S into subsets $S_1, S_2, \dots, S_v$, and $S_i$ contains $p_i$ examples of P and $n_i$ examples of N, the **expected information** is:
-
-$$
-E(A) = \sum_{i=1}^{v} \frac{p_i + n_i}{p + n} \times I(p_i, n_i)
-$$
-
-**Entropy (E):**
-Expected amount of information (in bits) needed to assign a class under the optimal, shortest-length code.
-
-**Information Gain:**
-
-$$
-\text{Gain}(A) = I(p, n) - E(A)
-$$
+- If the training set is large, the classifier is likely to perform better due to more data being available during training. However, fewer examples will be available for testing, which can make the accuracy estimate less reliable.
+- If the test set is large, the error estimate will be more accurate, but the classifier might perform worse due to having less data for training.
+- The samples might not be **representative**. For example, some classes may have very few or no instances at all in either the training or the test set.
 
 ---
 
-✅ **In Decision Trees:**
+**Solution**:
 
-- **Gini Index** → used in CART, selects the attribute with the **smallest** gini split value.
-- **Information Gain** → used in ID3/C4.5, selects the attribute with the **highest** gain value.
+- **Stratification** is the method used to ensure that both the training and the testing sets have **approximately the same proportion of examples from each class** as in the original dataset.
+  This improves representativeness and produces a more accurate evaluation.
+
+---
+
+### **Random Subsampling Method**
+
+- **Random subsampling** is a **variation** of the holdout method.
+
+- In this method:
+
+  - The holdout process is repeated **k times**.
+  - In each repetition, the dataset is randomly split into training and test sets.
+  - A fixed number of examples are selected **without replacement** for each split.
+
+- For **each data split**:
+
+  - The classifier is trained from scratch using the training examples.
+  - The performance measure $E_i$ (accuracy, error rate, etc.) is computed on the test set.
+
+- The **overall accuracy** is obtained by taking the **average** of the accuracies from all $k$ iterations:
+
+$$
+E = \frac{1}{K} \sum_{i=1}^K E_i
+$$
+
+Where:
+
+- $K$ = number of iterations (experiments)
+- $E_i$ = accuracy obtained in the $i^{th}$ experiment
+
+---
+
+**Advantages**:
+
+- Reduces dependency on a single arbitrary split of the data.
+- Produces a more **reliable and stable** accuracy estimate compared to the basic holdout method.
+
+---
+
+**Disadvantages**:
+
+- Requires retraining the classifier multiple times, increasing **computational cost**.
+- Without stratification, there is still a possibility of having non-representative samples.
 
 ---
