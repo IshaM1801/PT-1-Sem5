@@ -1,6 +1,6 @@
 Unit Test 1  Solutions
 
-Disclaimer:
+Disclaimer: USE README.md preview to read all files.
 
 All references are taken from recommended books or PPTs provided by the college.
 
