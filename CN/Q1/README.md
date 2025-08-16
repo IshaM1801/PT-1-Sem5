@@ -1,7 +1,3 @@
-Here’s your answer converted into **proper Markdown format**:
-
----
-
 # **Q1. Explain what is a Computer Network. Explain its Applications.**
 
 ## **Computer Network**
@@ -102,5 +98,3 @@ IoT networks improve **automation**, **energy efficiency**, and **user convenien
 - **Saving Money**
 
 ---
-
-Do you want me to **add the actual Client-Server diagram from Tanenbaum** into this Markdown so it’s exam-ready? That would make it perfect for your repo.

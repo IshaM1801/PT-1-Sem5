@@ -1,68 +1,83 @@
-OSI reference model was developed by the International Organization for Standardization (ISO) in 1984, and it is now considered as an architectural model for the inter-computer communications.
+# **OSI Reference Model**
 
-• The Open System Interconnection Reference Model (OSI Reference Model or OSI Model) is an abstract description for layered communications and computer network protocol design.
-• It divides network architecture into seven layers which, from top to bottom, are the Application, Presentation, Session, Transport, Network, Data Link, and Physical Layers. It is therefore often referred to as the OSI Seven Layer Model.
-• The benefits of the layered models are modularity and clear interfaces
-• In reality, no data are directly transferred from layer n on one machine to layer n
-on another machine.
-• Instead, each layer passes data and control information to the layer immediately
-below it, until the lowest layer is reached.
-• Below layer 1 is the physical medium through which actual communication
-occurs.
-• Virtual communication is shown by dotted lines and physical communication by
-solid lines.
+The **OSI Reference Model** was developed by the **International Organization for Standardization (ISO)** in **1984**, and is now considered an **architectural model** for **inter-computer communications**.
 
-The principles that were applied to arrive at the seven layers can be briefly
-summarized as follows:
+- The **Open System Interconnection Reference Model (OSI Model)** is an **abstract description** for **layered communications** and **computer network protocol design**.
+- It divides network architecture into **seven layers**, which from top to bottom are:
+  **Application**, **Presentation**, **Session**, **Transport**, **Network**, **Data Link**, and **Physical Layers**.
+- It is therefore often referred to as the **OSI Seven Layer Model**.
+- The benefits of the layered models are **modularity** and **clear interfaces**.
+- In reality, **no data are directly transferred** from layer _n_ on one machine to layer _n_ on another machine.
+- Instead, **each layer passes data** and **control information** to the layer immediately below it, until the lowest layer is reached.
+- Below **layer 1** is the **physical medium** through which actual communication occurs.
+- **Virtual communication** is shown by _dotted lines_ and **physical communication** by _solid lines_.
 
-1. A layer should be created where a different abstraction is needed.
-2. Each layer should perform a well-defined function.
-3. The function of each layer should be chosen with an eye toward defining internationally
-   standardized protocols.
-4. The layer boundaries should be chosen to minimize the information flow across the interfaces.
-5. The number of layers should be large enough that distinct functions need not be thrown together in
-   the same layer out of necessity and small enough that the architecture does not become unwieldy.
+---
 
-------Fig 1-32 diagram
+## **Principles Used to Define the Seven Layers**
 
-• Each layer adds (or encapsulates) some form of header or trailer. (Layer 2, the
-Data Link layer, is responsible for adding a trailer) as the data flow from Device A
-to Device B.
-• When the end system receives the unstructured bit stream from the physical wire,
-each layer removes the header information applicable to it until the application
-receives the data.
-• Eg: An email is sent from Device A to Device B
+1. A layer should be created where a **different abstraction** is needed.
+2. Each layer should perform a **well-defined function**.
+3. The function of each layer should be chosen to allow **internationally standardized protocols**.
+4. The **layer boundaries** should be chosen to **minimize the information flow** across interfaces.
+5. The number of layers should be large enough that **distinct functions are not forced together**, but small enough so that the **architecture remains manageable**.
 
-1. An application, such as an email program, creates data that will be sent by an end
-   user, such as an email message. The Application layer (layer 7) places a header
-   (encapsulation) field that contains information such as screen size and fonts,
-   and passes the data to the Presentation layer (layer 6).
+---
 
-How Data Flows through the OSI Layers
+## **Data Encapsulation and Decapsulation**
 
-2. The Presentation layer places layer 6 header information(PH) and will then pass
-   the new data to the Session layer (layer 5).
+- Each layer **adds (encapsulates)** some form of **header or trailer**.
+- **Layer 2 (Data Link)** is responsible for **adding a trailer** as the data flows from **Device A** to **Device B**.
+- When the **end system receives the unstructured bit stream** from the physical wire, each layer **removes the header/trailer information** applicable to it until the **Application layer** receives the data.
 
-3. The Session layer follows the same process by adding layer 5 header
-   information(SH).
+---
 
-4. The Transport layer places layer 4 information in the header(TH), and passes it to
-   the Network layer (layer 3).
+## **Example: Sending an Email from Device A to Device B**
 
-5. The Network layer places layer 3 header information(NH), such as the source and
-   destination address so the Network layer can determine the best delivery path for
-   the packets, and passes this data to the Data Link layer (layer 2).
+**Step 1:**
+An application (email program) creates data (email message).
 
-6. The Data Link layer places layer 2 header(DH) and trailer information(DT) such as a
-   Frame Check Sequence (FCS) to ensure that the information is not corrupt, and passes
-   this new data to the Physical layer (layer 1) for transmission across the media.
+- **Application layer (Layer 7)** places a **header** containing info such as **screen size** and **fonts**, then passes it to the **Presentation layer**.
 
-7. The bit stream is then transmitted as ones and zeros on the Physical layer.
+**Step 2:**
 
-8. Steps 1 through 7 occur in reverse order on the destination device. Device B collects the
-   raw bits from the physical wire and passes them up the Data Link layer. The Data Link
-   layer removes the headers and trailers and passes the remaining information to the
-   Network layer and so forth until data is received by the Application layer. Eventually,
-   Device B will receive an email notification displaying a message to indicate that a new
-   email message has been received.
-   -----diagram.png(attached in this folder)
+- **Presentation layer (Layer 6)** adds **layer 6 header (PH)** and passes data to the **Session layer**.
+
+**Step 3:**
+
+- **Session layer (Layer 5)** adds **layer 5 header (SH)**.
+
+**Step 4:**
+
+- **Transport layer (Layer 4)** adds **layer 4 header (TH)** and passes it to the **Network layer**.
+
+**Step 5:**
+
+- **Network layer (Layer 3)** adds **layer 3 header (NH)** (source and destination addresses) to determine the **best delivery path**, then passes to **Data Link layer**.
+
+**Step 6:**
+
+- **Data Link layer (Layer 2)** adds **layer 2 header (DH)** and **trailer (DT)** (e.g., **Frame Check Sequence** for error checking), then passes to **Physical layer**.
+
+**Step 7:**
+
+- **Physical layer (Layer 1)** transmits the **bit stream** as **1s and 0s** across the medium.
+
+**Step 8:**
+
+- Steps **1 to 7** occur **in reverse** on **Device B**:
+
+  - Collect raw bits from the wire.
+  - Pass upward through layers, removing headers/trailers at each step.
+  - Finally, the **Application layer** on Device B receives the email, and the user sees a **new message notification**.
+
+---
+
+📌 **Diagram:**
+_(Insert `OSI_Model_Diagram.png` here using the following Markdown syntax)_
+
+```md
+![OSI Reference Model](diagram.png)
+```
+
+---

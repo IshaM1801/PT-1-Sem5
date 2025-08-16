@@ -1,5 +1,5 @@
----
 # **LAN, MAN, WAN**
+
 ---
 
 ## **LAN (Local Area Network)**
@@ -25,7 +25,7 @@
 
 **Popular Standard:**
 
-- IEEE 802.11 (Wi-Fi) – speeds from 11 Mbps (802.11b) to 7 Gbps (802.11ad).
+- IEEE 802.11 (Wi-Fi) – speeds from 11 Mbps to 7 Gbps.
 
 📌 Draw: Wireless and Wired LAN diagram in Fig 1-7
 
@@ -85,8 +85,6 @@
 
 - Choose outgoing line when data arrives.
 - Use routing algorithms to pick the path.
-- Use forwarding algorithms to send packets to next destination.
-- WANs may have many transmission lines and intermediate routers to forward data over long distances.
 
 📌 Draw: Fig 1-9
 

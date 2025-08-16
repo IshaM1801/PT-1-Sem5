@@ -1,11 +1,9 @@
----
-
 ## **Interconnection Networking Devices**
 
 ### **1. Repeater**
 
-* **Layer**: Physical Layer
-* **Working**: A repeater operates at the physical layer. Its job is to regenerate the signal over the same network before the signal becomes too weak or corrupted so as to extend the length to which the signal can be transmitted over the same network. Repeaters do not amplify the signal.
+- **Layer**: Physical Layer
+- **Working**: A repeater operates at the physical layer. Its job is to regenerate the signal over the same network before the signal becomes too weak or corrupted so as to extend the length to which the signal can be transmitted over the same network. Repeaters do not amplify the signal.
 
 **Diagram:**
 
