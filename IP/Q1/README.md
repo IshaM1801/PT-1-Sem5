@@ -96,3 +96,5 @@
 | **Telnet** | Application | Remote login                                      | TCP-based                     | Remote server access    |
 
 ---
+
+https://notebooklm.google.com/notebook/8ba2a2f6-6596-43d5-9106-1f9eebb506e5
